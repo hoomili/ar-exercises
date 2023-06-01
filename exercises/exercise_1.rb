@@ -1,7 +1,7 @@
 require_relative '../setup'
 require 'active_record'
 class Stores < ActiveRecord::Base
-  
+  has_many :employees
 end
 
 
