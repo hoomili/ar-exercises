@@ -4,8 +4,12 @@ require_relative './exercise_2'
 require_relative './exercise_3'
 require_relative './exercise_4'
 require_relative './exercise_5'
-class Stores < ActiveRecord::Base
+class Employees < ActiveRecord::Base
   belongs_to :store
+  validates :first_name, presence: true, comparison: { greater_than_or_equal_to: 40, less_than_or_equal_to: 200 }
+  validates :last_name, presence: true
+  validates :stores_id, presence: true
+  validates :hourly_rate, comparison: { greater_than_or_equal_to: 40, less_than_or_equal_to: 200 }
 end
 
 @store1.employees.create(first_name: "Khurram", last_name: "Virani", hourly_rate: 60)
@@ -16,4 +20,4 @@ end
 puts "Exercise 6"
 puts "----------"
 
-# Your code goes here ...
+
