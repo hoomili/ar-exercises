@@ -8,6 +8,7 @@ require_relative './exercise_2'
 @store3.destroy
 
 puts "Number of stores created: #{Stores.count}"
+puts "Exercise 3"
 puts "----------"
 
 # Your code goes here ...
